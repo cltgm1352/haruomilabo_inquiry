@@ -136,6 +136,16 @@
     text-decoration: underline;
   }
 
+  .notice {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #333;
+    line-height: 1.5;
+    background-color: #e0f4ff;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
   @media (max-width: 480px) {
     body {
       padding: 20px;
@@ -190,40 +200,12 @@
     </label>
   </div>
 
-  <!-- 送信後ページ -->
-  <input type="hidden" name="_next" value="https://cltgm1352.github.io/haruomilabo_contactus/thank-you.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-
-  <!-- 自動返信メール -->
-  <input type="hidden" name="_autoresponse" value="お問合せ受付完了メール
-
-お名前
-{name} 様
-この度はHARUOMILABOへお問い合わせいただきありがとうございます。
-
-ご記入いただいたメールアドレスにharuomilaboweb@protonmail.comから返信が送信されます。今しばらくお待ちください。
-お問い合わせの返信には少しお時間がかかる場合がございますが、ご了承ください。
-
-----------------------------------------------------
-▼お問合せ
-お名前
-{name}
-
-メールアドレス
-{email}
-
-お問合せ内容
-{message}
-----------------------------------------------------
-HARUOMILABO
-----------------------------------------------------
-ホームページ:https://www.haruomilabo.com">
-
-  <!-- 件名 -->
-  <input type="hidden" name="_subject" value="お問合せ受付完了｜HARUOMILABO">
-
   <button type="submit">送信する</button>
+
+  <div class="notice">
+    ご記入いただいたメールアドレスに <strong>haruomilaboweb@protonmail.com</strong> から返信が送信されます。今しばらくお待ちください。<br>
+    お問い合わせの返信には少しお時間がかかる場合がございますが、ご了承ください。
+  </div>
 </form>
 
 </body>
