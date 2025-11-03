@@ -144,7 +144,7 @@
     background-color: #e0f4ff;
     padding: 12px;
     border-radius: 8px;
-    word-break: break-word; /* 長い文字列も折り返す */
+    word-break: break-word;
   }
 
   @media (max-width: 480px) {
@@ -182,10 +182,7 @@
 </head>
 <body>
 
-<form action="https://formsubmit.co/haruomilaboweb@protonmail.com" method="POST">
-  <!-- 送信後リダイレクト -->
-  <input type="hidden" name="_next" value="https://cltgm1352.github.io/haruomilabo_contactus/thank-you.html">
-
+<form id="contactForm">
   <h2>HARUOMILABOお問い合わせ</h2>
 
   <label>お名前<span class="required">＊必須</span></label>
@@ -211,6 +208,28 @@
     お問い合わせの返信には少しお時間がかかる場合がございますが、ご了承ください。
   </div>
 </form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault(); // ブラウザの通常送信を停止
+
+  const formData = new FormData(this);
+
+  fetch("https://formsubmit.co/haruomilaboweb@protonmail.com", {
+    method: "POST",
+    body: formData,
+  }).then(response => {
+    if(response.ok){
+      window.location.href = "https://cltgm1352.github.io/haruomilabo_contactus/thank-you.html";
+    } else {
+      alert("送信に失敗しました。時間を置いて再度お試しください。");
+    }
+  }).catch(err => {
+    console.error(err);
+    alert("送信に失敗しました。ネット環境をご確認ください。");
+  });
+});
+</script>
 
 </body>
 </html>
