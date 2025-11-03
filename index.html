@@ -42,6 +42,11 @@
     font-size: 0.95em;
   }
 
+  label .required {
+    color: red;
+    margin-left: 3px;
+  }
+
   input, textarea {
     width: 100%;
     padding: 10px;
@@ -169,13 +174,13 @@
 <form action="https://formsubmit.co/haruomilaboweb@protonmail.com" method="POST">
   <h2>お問い合わせ</h2>
 
-  <label>お名前：</label>
+  <label>お名前<span class="required">＊必須</span>：</label>
   <input type="text" name="name" required>
 
-  <label>メールアドレス：</label>
+  <label>メールアドレス<span class="required">＊必須</span>：</label>
   <input type="email" name="email" required>
 
-  <label>お問い合わせ内容：</label>
+  <label>お問い合わせ内容<span class="required">＊必須</span>：</label>
   <textarea name="message" rows="5" required></textarea>
 
   <div class="privacy">
@@ -185,8 +190,10 @@
     </label>
   </div>
 
-  <!-- 送信後にthank-you.htmlにリダイレクト -->
-  <input type="hidden" name="_next" value="thank-you.html">
+  <!-- GitHub Pages 用に絶対 URL 指定 -->
+  <input type="hidden" name="_next" value="https://cltgm1352.github.io/haruomilabo_contactus/thank-you.html">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 
   <button type="submit">送信する</button>
 </form>
