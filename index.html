@@ -174,13 +174,13 @@
 <form action="https://formsubmit.co/haruomilaboweb@protonmail.com" method="POST">
   <h2>お問い合わせ</h2>
 
-  <label>お名前<span class="required">＊必須</span>：</label>
+  <label>お名前<span class="required">＊必須</span></label>
   <input type="text" name="name" required>
 
-  <label>メールアドレス<span class="required">＊必須</span>：</label>
+  <label>メールアドレス<span class="required">＊必須</span></label>
   <input type="email" name="email" required>
 
-  <label>お問い合わせ内容<span class="required">＊必須</span>：</label>
+  <label>お問い合わせ内容<span class="required">＊必須</span></label>
   <textarea name="message" rows="5" required></textarea>
 
   <div class="privacy">
@@ -190,10 +190,38 @@
     </label>
   </div>
 
-  <!-- GitHub Pages 用に絶対 URL 指定 -->
+  <!-- 送信後ページ -->
   <input type="hidden" name="_next" value="https://cltgm1352.github.io/haruomilabo_contactus/thank-you.html">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
+
+  <!-- 自動返信メール -->
+  <input type="hidden" name="_autoresponse" value="お問合せ受付完了メール
+
+お名前
+{name} 様
+この度はHARUOMILABOへお問い合わせいただきありがとうございます。
+
+ご記入いただいたメールアドレスにharuomilaboweb@protonmail.comから返信が送信されます。今しばらくお待ちください。
+お問い合わせの返信には少しお時間がかかる場合がございますが、ご了承ください。
+
+----------------------------------------------------
+▼お問合せ
+お名前
+{name}
+
+メールアドレス
+{email}
+
+お問合せ内容
+{message}
+----------------------------------------------------
+HARUOMILABO
+----------------------------------------------------
+ホームページ:https://www.haruomilabo.com">
+
+  <!-- 件名 -->
+  <input type="hidden" name="_subject" value="お問合せ受付完了｜HARUOMILABO">
 
   <button type="submit">送信する</button>
 </form>
